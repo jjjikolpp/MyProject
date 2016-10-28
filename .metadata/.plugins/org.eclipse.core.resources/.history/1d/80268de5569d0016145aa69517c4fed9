@@ -7,7 +7,7 @@
 	<!-- 공유 자원 설정 -->
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
     	<property name="locations">
-    		<value>classpath:com/mycom/resource/db.properties</value>
+    		<value>classpath:pack/resource/db.properties</value>
     	</property>
     </bean>  
     
@@ -24,7 +24,7 @@
 	<!-- 아래꺼 지움 anno 에는 필요없어서   우에꺼에서 컨피겨 빠짐 -->
 	
 	<bean class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="com.mycom.model.AnnoInter"/>
+		<property name="mapperInterface" value="pack.model.SangAnnoInter"/>
 		<property name="sqlSessionFactory" ref="sqlSessionFactoryBean"/>
 	</bean>
 </beans>

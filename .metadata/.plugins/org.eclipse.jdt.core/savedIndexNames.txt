@@ -64,7 +64,6 @@ INDEX VERSION 1.129+C:\sts-bundle\myproject\.metadata\.plugins\org.eclipse.jdt.c
 544857109.index
 1995669776.index
 3545392175.index
-3269689913.index
 2800558102.index
 1383126696.index
 100244964.index
