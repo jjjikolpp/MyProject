@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;db.properties&apos; to &apos;zzz_test_project/src/main/java/com.mycom.resource&apos;&#x0D;&#x0A;- Original project: &apos;spring_mvc14_mybatis_anno&apos;&#x0D;&#x0A;- Destination element: &apos;zzz_test_project/src/main/java/com.mycom.resource&apos;&#x0D;&#x0A;- Original element: &apos;db.properties&apos;" description="Copy file" destination="=zzz_test_project/src\/main\/java&lt;com.mycom.resource" element1="src/main/java/pack/resource/db.properties" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1477690075217" units="0" version="1.0"/>
+</session>
