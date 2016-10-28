@@ -1,4 +1,4 @@
 #Tomcat publish data
-#Sat Oct 29 06:06:10 KST 2016
+#Sat Oct 29 06:08:43 KST 2016
 org.eclipse.jst.jee.server\:zzz_test_project=C\:\\sts-bundle\\pivotal-tc-server-developer-3.1.5.RELEASE\\base-instance\\wtpwebapps\\zzz_test_project
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\jjjik\\.m2\\repository\\org\\springframework\\spring-web\\4.1.0.RELEASE\\spring-web-4.1.0.RELEASE.jar=C\:\\sts-bundle\\pivotal-tc-server-developer-3.1.5.RELEASE\\base-instance\\wtpwebapps\\zzz_test_project\\WEB-INF\\lib\\spring-web-4.1.0.RELEASE.jar
