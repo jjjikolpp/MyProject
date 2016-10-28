@@ -8,5 +8,6 @@
 </head>
 <body>
 @@
+<a href="list">list</a>
 </body>
 </html>
