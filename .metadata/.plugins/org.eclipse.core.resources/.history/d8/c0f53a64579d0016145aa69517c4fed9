@@ -1,8 +1,5 @@
 package com.mycom.model;
 
-import org.apache.ibatis.annotations.Select;
-
 public interface AnnoInter {
-	@Select
-	
+
 }
