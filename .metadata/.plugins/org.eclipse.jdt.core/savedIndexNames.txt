@@ -19,8 +19,6 @@ INDEX VERSION 1.129+C:\sts-bundle\myproject\.metadata\.plugins\org.eclipse.jdt.c
 4199900394.index
 3226598503.index
 1845894189.index
-3758772631.index
-4188212751.index
 3859894162.index
 3242691054.index
 1746745377.index
