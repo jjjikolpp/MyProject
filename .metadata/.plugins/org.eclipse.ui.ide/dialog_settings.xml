@@ -161,6 +161,9 @@
 			<item value=""/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="C:\sts-bundle\sts-3.8.1.RELEASE\2016-10-29(spring_mvc19_json_ex1) carrier.zip"/>
+			<item value="C:\sts-bundle\sts-3.8.1.RELEASE\2016-10-29(spring_mvc19_json) carrier.zip"/>
+			<item value="C:\sts-bundle\sts-3.8.1.RELEASE\2016-10-29(spring_mvc18_json) carrier.zip"/>
 			<item value="C:\sts-bundle\sts-3.8.1.RELEASE\2016-10-29(mybatis_anno) carrier.zip"/>
 		</list>
 	</section>

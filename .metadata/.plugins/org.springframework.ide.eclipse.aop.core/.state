@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="spring_mvc19_json_db"/>
+<aop-project name="spring_mvc19_json_db_ex1"/>
 <aop-project name="zzz_test_project"/>
+<aop-project name="spring_mvc18_json"/>
 <aop-project name="spring_mvc14_mybatis_anno"/>
 </aop-reference-model>

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,20 +21,20 @@ h1 {
 
 $(function(){
 
-    var count=1;
+   	//var count=1;
     
-    //$(window).scroll(function() { });
+    //$(window).scroll(function() { });   ######### 요거
     
     //문서가 로드되면 20 row 생성 그리고 생성이 완료되면 scroll 이벤트 바인딩
-    for(var i = 1; i <= 20; i++) {
-        count = i;
+  //  for(var i = 1; i <= 20; i++) {
+   //     count = i;
         
-        $("<h1>"+count+" line scroll</h1>").appendTo("body");
+   //     $("<h1>"+count+" line scroll</h1>").appendTo("body");
 
-        if(count == 20) {
-           $(window).bind("scroll",ss);// bind 이벤트 묶기, 스크롤이 발생했을때 ss function 실행
-        }
-    }
+   //     if(count == 20) {
+    //       $(window).bind("scroll",ss);// bind 이벤트 묶기, 스크롤이 발생했을때 ss function 실행
+    //    }
+  //  }
 
     function ss() {
 		
@@ -56,9 +57,9 @@ $(function(){
         if(scrollHeight == documentHeight) { //문서의 맨끝에 도달했을때 내용 추가 
             for(var i = 0; i<10; i++) {
                 //count = count + 1;
-                count++;
+                //count++; // 이거랑
                 //$("<h1> infinity scroll </h>").appendTo("body");
-                $("<h1>"+count+" line scroll</h1>").appendTo("body");
+                //$("<h1>"+count+" line scroll</h1>").appendTo("body"); //이거랑  두개 끝
             }
         }
     }//function infinityScrollFunction()
@@ -70,5 +71,9 @@ $(function(){
 <body>
 @안녕 난 리스트야
 ${fn:length(list) }
+<c:forEach var="s" items="${list }">
+	<h1>${s.b_no1}</h1>
+</c:forEach>
+
 </body>
 </html>

@@ -18,4 +18,10 @@ public class BoardDao implements BoardDaoInter{
 		return inter.selectList();
 	}
 	
+	@Override
+	public List<BoardDto> selectScrollList() throws DataAccessException {
+		// TODO Auto-generated method stub
+		return inter.selectScrollList();
+	}
+	
 }
