@@ -1,0 +1,6 @@
+package com.mycom.model;
+
+public class BoardDto {
+	b_no1 , b_mno
+	b_image, b_content
+}

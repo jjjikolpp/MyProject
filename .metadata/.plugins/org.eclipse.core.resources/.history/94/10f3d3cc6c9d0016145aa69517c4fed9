@@ -1,0 +1,7 @@
+package com.mycom.model;
+
+import java.util.List;
+
+public class BoardDaoInter {
+	List<BoardDto> selectList();
+}
