@@ -577,3 +577,12 @@
 2016-10-29 11:58:32,846 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
 2016-10-29 11:58:32,850 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2016-10-29 11:58:32,851 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\sts-bundle\myproject\spring_mvc19_json_db\src\test\resources
+2016-10-29 11:59:18,861 [Worker-34] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: org.springframework.samples.service.service:spring_mvc19_json_db_ex1:0.0.1-SNAPSHOT @ C:\sts-bundle\myproject\spring_mvc19_json_db_ex1\pom.xml.
+2016-10-29 11:59:19,783 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-10-29 11:59:19,783 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2016-10-29 11:59:19,788 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-10-29 11:59:19,788 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\sts-bundle\myproject\spring_mvc19_json_db_ex1\src\test\resources
+2016-10-29 11:59:29,197 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-10-29 11:59:29,198 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2016-10-29 11:59:29,207 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-10-29 11:59:29,207 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\sts-bundle\myproject\spring_mvc19_json_db_ex1\src\test\resources
