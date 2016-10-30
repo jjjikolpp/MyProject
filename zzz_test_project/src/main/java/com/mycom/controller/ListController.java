@@ -39,8 +39,6 @@ public class ListController {
 		}
 		Map<String, Object> boardData = new HashMap<String, Object>();
 		boardData.put("datas", dataList);
-		System.out.println(boardData.size());
-		System.out.println(dataList.size());
 		/// 여기까지 하다가 맘  보드 데이타 넘겨야함
 		return boardData;
 	}

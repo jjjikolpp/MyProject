@@ -19,6 +19,8 @@ h1 {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
+	$("#showData").scroll(function(){ }); // ##### 요거
+	
 	$.ajax({
 		type:"get",
 		url:"firstList",
@@ -31,10 +33,13 @@ $(document).ready(function(){
 				str += "<tr>"
 				str += "<td>" + "<h1>" + objArr["b_no1"] + "</td>";  
 				str += "</tr>"
-				
 			});
-			str += "</table>"
+			
+			str += "</table>";
 			$("#showData").append(str);
+			
+			$(window).bind("scroll",ss);  // 이거 div 로 어떻게 변경하지.. ㄱ-
+			
 		},
 		error:function(){
 			$("#showData").text("에러 발생");
@@ -42,11 +47,22 @@ $(document).ready(function(){
 	});
 });
 
+function ss(){
+	var documentHeight  = $(document).height();
+	var scrollHeight = $(window).scrollTop()+$(window).height();
+	console.log("documentHeight : " + documentHeight);
+	console.log("scrollHeight : " + scrollHeight);
+		
+		
+
+}
+	
+
+
 </script>
 </head>
 <body>
 @안녕 난 리스트야
-${fn:length(list) }
 <div id="showData"></div>
 
 </body>
