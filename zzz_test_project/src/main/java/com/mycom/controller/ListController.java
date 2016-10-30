@@ -8,6 +8,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.mycom.model.BoardDaoInter;
@@ -17,12 +18,15 @@ import com.mycom.model.BoardDto;
 public class ListController {
 	@Autowired
 	private BoardDaoInter inter;
-	
+
 	@RequestMapping("list")
-	public ModelAndView viewList(){
-
-
-
+	public ModelAndView viewList(){	
+		return new ModelAndView("list");
+	}
+	
+	@RequestMapping("firstList")
+	@ResponseBody
+	public Map<String, Object> firstList(){
 		List<Map<String, String>> dataList = new ArrayList<Map<String,String>>();
 		Map<String, String> data = null;
 		
@@ -35,9 +39,10 @@ public class ListController {
 		}
 		Map<String, Object> boardData = new HashMap<String, Object>();
 		boardData.put("datas", dataList);
+		System.out.println(boardData.size());
+		System.out.println(dataList.size());
 		/// 여기까지 하다가 맘  보드 데이타 넘겨야함
-		return new ModelAndView("list","boardData",boardData);
-
+		return boardData;
 	}
 	
 	

@@ -18,10 +18,28 @@ h1 {
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
-
-$(function(){
-	
-   	
+$(document).ready(function(){
+	$.ajax({
+		type:"get",
+		url:"firstList",
+		dataType:"json",
+		success:function(boardData){
+			var str = "<table border='1'>";
+			str +="<tr><th>번호</th></tr>"
+			var list = boardData.datas;
+			$(list).each(function(index,objArr){
+				str += "<tr>"
+				str += "<td>" + "<h1>" + objArr["b_no1"] + "</td>";  
+				str += "</tr>"
+				
+			});
+			str += "</table>"
+			$("#showData").append(str);
+		},
+		error:function(){
+			$("#showData").text("에러 발생");
+		}
+	});
 });
 
 </script>
@@ -29,9 +47,7 @@ $(function(){
 <body>
 @안녕 난 리스트야
 ${fn:length(list) }
-<c:forEach var="s" items="${list }">
-	<h1>${s.b_no1}</h1>
-</c:forEach>
+<div id="showData"></div>
 
 </body>
 </html>
