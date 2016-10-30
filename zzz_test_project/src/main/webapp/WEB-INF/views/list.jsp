@@ -52,9 +52,32 @@ function ss(){
 	var scrollHeight = $(window).scrollTop()+$(window).height();
 	console.log("documentHeight : " + documentHeight);
 	console.log("scrollHeight : " + scrollHeight);
-		
-		
-
+	
+	if(scrollHeight == documentHeight) { // 이거 안되면  ## 스크롤 이벤트 진행중으로 되딜리기
+		$.ajax({
+			type:"get",
+			url:"scroll",
+			dataType:"json",
+			success:function(scrollData){
+				var str = "<table border='1'>";
+				str +="<tr><th>번호</th></tr>"
+				var list = scrollData.datas;
+				$(list).each(function(index,objArr){
+					str += "<tr>"
+					str += "<td>" + "<h1>" + objArr["b_no1"] + "</td>";  
+					str += "</tr>"
+				});
+				
+				str += "</table>";
+				$("#showData").append(str);
+				
+				$(window).bind("scroll",ss);
+			},
+			error:function(){
+				console.log("scroll 이벤트 실패")
+			}
+		});
+	}
 }
 	
 

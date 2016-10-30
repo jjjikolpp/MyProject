@@ -43,5 +43,43 @@ public class ListController {
 		return boardData;
 	}
 	
+	@RequestMapping("scroll")
+	@ResponseBody
+	public Map<String, Object> scrollList(){
+		List<Map<String, String>> dataList = new ArrayList<Map<String,String>>();
+		Map<String, String> data = null;
+		
+		List<BoardDto> boardList = inter.selectScrollList();
+		for(BoardDto s : boardList){
+			data = new HashMap<String, String>();
+			data.put("b_no1", s.getB_no1());
+			dataList.add(data);
+		}
+		Map<String, Object> scrollData = new HashMap<String, Object>();
+		scrollData.put("datas", dataList);
+		
+		return scrollData;
+	}
+	
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
