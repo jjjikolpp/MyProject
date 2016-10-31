@@ -19,7 +19,7 @@ h1 {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-	$("#showData").scroll(function(){ }); // ##### 요거
+	$(window).scroll(function(){ }); // ##### 요거
 	
 	$.ajax({
 		type:"get",
@@ -31,7 +31,7 @@ $(document).ready(function(){
 			var list = boardData.datas;
 			$(list).each(function(index,objArr){
 				str += "<tr>"
-				str += "<td>" + "<h1>" + objArr["b_no1"] + "</td>";  
+				str += "<td class='scrolling' data-bno = "+this.b_no1 +">" + "<h1>" + objArr["b_no1"] + "</td>";  
 				str += "</tr>"
 			});
 			
@@ -50,28 +50,34 @@ $(document).ready(function(){
 function ss(){
 	var documentHeight  = $(document).height();
 	var scrollHeight = $(window).scrollTop()+$(window).height();
-	console.log("documentHeight : " + documentHeight);
-	console.log("scrollHeight : " + scrollHeight);
+//	console.log("documentHeight : " + documentHeight);
+//	console.log("scrollHeight : " + scrollHeight);
 	
 	if(scrollHeight == documentHeight) { // 이거 안되면  ## 스크롤 이벤트 진행중으로 되딜리기
+		var lastbno = $(".scrolling:last").attr("data-bno");
 		$.ajax({
 			type:"get",
 			url:"scroll",
 			dataType:"json",
+			data:{"last_bno":lastbno},
 			
 			
 			success:function(scrollData){
 				var str = "<table border='1'>";
 				str +="<tr><th>번호</th></tr>"
 				var list = scrollData.datas;
+				
 				$(list).each(function(index,objArr){
 					str += "<tr>"
-					str += "<td>" + "<h1>" + objArr["b_no1"] + "</td>";  
+					str += "<td class='scrolling' data-bno = "+this.b_no1 +">" + "<h1>" + objArr["b_no1"] + "</td>";  
 					str += "</tr>"
+					
+					
 				});
 				
 				str += "</table>";
 				$("#showData").append(str);
+				console.log(lastbno)
 			},
 			error:function(){
 				console.log("scroll 이벤트 실패")
@@ -86,7 +92,9 @@ function ss(){
 </head>
 <body>
 @안녕 난 리스트야
+<!-- 
+<div id="showData" style="overflow-y:scroll;width: 100%; height: 65px"></div>
+ -->
 <div id="showData"></div>
-
 </body>
 </html>
