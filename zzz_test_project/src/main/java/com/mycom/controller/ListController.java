@@ -46,11 +46,14 @@ public class ListController {
 	
 	@RequestMapping("scroll")
 	@ResponseBody
-	public Map<String, Object> scrollList(@RequestParam("last_bno")String last_bno){
+	public Map<String, Object> scrollList(@RequestParam("last_bno")String last_bnoShouldMinus){
 		List<Map<String, String>> dataList = new ArrayList<Map<String,String>>();
 		Map<String, String> data = null;
+		int last_bnoInt = Integer.parseInt(last_bnoShouldMinus);
+		String last_bno = Integer.toString(last_bnoInt - 1);
+		
 		System.out.println("last_bno : "+last_bno);
-		List<BoardDto> boardList = inter.selectScrollList();
+		List<BoardDto> boardList = inter.selectScrollList(last_bno);
 		for(BoardDto s : boardList){
 			data = new HashMap<String, String>();
 			data.put("b_no1", s.getB_no1());

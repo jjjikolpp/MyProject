@@ -6,5 +6,5 @@ import org.springframework.dao.DataAccessException;
 
 public interface BoardDaoInter {
 	List<BoardDto> selectList() throws DataAccessException;
-	List<BoardDto> selectScrollList() throws DataAccessException;
+	List<BoardDto> selectScrollList(String last_bno) throws DataAccessException;
 }

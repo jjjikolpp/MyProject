@@ -10,5 +10,6 @@ public interface AnnoInter {
 	
 	@Select("select * from boardtest order by b_no1 desc limit 0,3")
 	public List<BoardDto> selectScrollList();
-	
+	@Select("select * from boardtest where b_no1 <= #{last_bno} order by b_no1 desc limit 0,3;")
+	public List<BoardDto> selectScrollList2(String last_bno);
 }

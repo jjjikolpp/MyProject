@@ -19,9 +19,9 @@ public class BoardDao implements BoardDaoInter{
 	}
 	
 	@Override
-	public List<BoardDto> selectScrollList() throws DataAccessException {
+	public List<BoardDto> selectScrollList(String last_bno) throws DataAccessException {
 		// TODO Auto-generated method stub
-		return inter.selectScrollList();
+		return inter.selectScrollList2(last_bno);
 	}
 	
 }

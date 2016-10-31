@@ -64,7 +64,7 @@ function ss(){
 			
 			success:function(scrollData){
 				var str = "<table border='1'>";
-				str +="<tr><th>번호</th></tr>"
+				
 				var list = scrollData.datas;
 				
 				$(list).each(function(index,objArr){
