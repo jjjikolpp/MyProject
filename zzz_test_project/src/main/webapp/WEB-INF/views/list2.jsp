@@ -74,7 +74,7 @@ $(function(){
 </head>
 <body>
 @안녕 난 리스트야
-${fn:length(list) }
+
 <c:forEach var="s" items="${list }">
 	<h1>${s.b_no1}</h1>
 </c:forEach>

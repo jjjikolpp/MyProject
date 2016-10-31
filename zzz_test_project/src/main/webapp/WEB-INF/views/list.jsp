@@ -19,7 +19,7 @@ h1 {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-	$("#showData").scroll(function(){ }); // ##### 요거
+	$(window).scroll(function(){ }); // ##### 요거
 	
 	$.ajax({
 		type:"get",
@@ -64,10 +64,13 @@ function ss(){
 				var str = "<table border='1'>";
 				str +="<tr><th>번호</th></tr>"
 				var list = scrollData.datas;
+				
 				$(list).each(function(index,objArr){
 					str += "<tr>"
 					str += "<td>" + "<h1>" + objArr["b_no1"] + "</td>";  
 					str += "</tr>"
+					
+					
 				});
 				
 				str += "</table>";
@@ -86,7 +89,9 @@ function ss(){
 </head>
 <body>
 @안녕 난 리스트야
+<!-- 
+<div id="showData" style="overflow-y:scroll;width: 100%; height: 65px"></div>
+ -->
 <div id="showData"></div>
-
 </body>
 </html>
