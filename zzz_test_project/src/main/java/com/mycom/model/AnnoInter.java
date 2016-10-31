@@ -8,7 +8,7 @@ public interface AnnoInter {
 	@Select("select * from boardtest order by b_no1 desc limit 0,15")
 	public List<BoardDto> selectList();
 	
-	@Select("select * from boardtest order by b_no1 desc limit 0,10")
+	@Select("select * from boardtest order by b_no1 desc limit 0,3")
 	public List<BoardDto> selectScrollList();
 	
 }

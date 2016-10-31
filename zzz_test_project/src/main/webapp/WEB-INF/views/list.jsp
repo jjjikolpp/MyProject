@@ -31,7 +31,7 @@ $(document).ready(function(){
 			var list = boardData.datas;
 			$(list).each(function(index,objArr){
 				str += "<tr>"
-				str += "<td>" + "<h1>" + objArr["b_no1"] + "</td>";  
+				str += "<td class='scrolling' data-bno = "+this.b_no1 +">" + "<h1>" + objArr["b_no1"] + "</td>";  
 				str += "</tr>"
 			});
 			
@@ -50,14 +50,16 @@ $(document).ready(function(){
 function ss(){
 	var documentHeight  = $(document).height();
 	var scrollHeight = $(window).scrollTop()+$(window).height();
-	console.log("documentHeight : " + documentHeight);
-	console.log("scrollHeight : " + scrollHeight);
+//	console.log("documentHeight : " + documentHeight);
+//	console.log("scrollHeight : " + scrollHeight);
 	
 	if(scrollHeight == documentHeight) { // 이거 안되면  ## 스크롤 이벤트 진행중으로 되딜리기
+		var lastbno = $(".scrolling:last").attr("data-bno");
 		$.ajax({
 			type:"get",
 			url:"scroll",
 			dataType:"json",
+			data:{"last_bno":lastbno},
 			
 			
 			success:function(scrollData){
@@ -67,7 +69,7 @@ function ss(){
 				
 				$(list).each(function(index,objArr){
 					str += "<tr>"
-					str += "<td>" + "<h1>" + objArr["b_no1"] + "</td>";  
+					str += "<td class='scrolling' data-bno = "+this.b_no1 +">" + "<h1>" + objArr["b_no1"] + "</td>";  
 					str += "</tr>"
 					
 					
@@ -75,6 +77,7 @@ function ss(){
 				
 				str += "</table>";
 				$("#showData").append(str);
+				console.log(lastbno)
 			},
 			error:function(){
 				console.log("scroll 이벤트 실패")

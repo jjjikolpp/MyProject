@@ -1,0 +1,86 @@
+package com.mycom.controller;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.mycom.model.BoardDaoInter;
+import com.mycom.model.BoardDto;
+
+@Controller
+public class ListController {
+	@Autowired
+	private BoardDaoInter inter;
+
+	@RequestMapping("list")
+	public ModelAndView viewList(){	
+		return new ModelAndView("list");
+	}
+	
+	@RequestMapping("firstList")
+	@ResponseBody
+	public Map<String, Object> firstList(){
+		List<Map<String, String>> dataList = new ArrayList<Map<String,String>>();
+		Map<String, String> data = null;
+		
+		List<BoardDto> boardList = inter.selectList();
+		for(BoardDto s : boardList){
+			data = new HashMap<String, String>();
+			data.put("b_no1", s.getB_no1());
+			
+			dataList.add(data);
+		}
+		Map<String, Object> boardData = new HashMap<String, Object>();
+		boardData.put("datas", dataList);
+		/// 여기까지 하다가 맘  보드 데이타 넘겨야함
+		return boardData;
+	}
+	
+	@RequestMapping("scroll")
+	@ResponseBody
+	public Map<String, Object> scrollList(@RequestParam("last_bno")String last_no){
+		List<Map<String, String>> dataList = new ArrayList<Map<String,String>>();
+		Map<String, String> data = null;
+		System.out.println(last_bno);
+		List<BoardDto> boardList = inter.selectScrollList();
+		for(BoardDto s : boardList){
+			data = new HashMap<String, String>();
+			data.put("b_no1", s.getB_no1());
+			dataList.add(data);
+		}
+		Map<String, Object> scrollData = new HashMap<String, Object>();
+		scrollData.put("datas", dataList);
+		
+		return scrollData;
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

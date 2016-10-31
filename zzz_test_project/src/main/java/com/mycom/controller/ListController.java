@@ -8,6 +8,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -45,10 +46,10 @@ public class ListController {
 	
 	@RequestMapping("scroll")
 	@ResponseBody
-	public Map<String, Object> scrollList(){
+	public Map<String, Object> scrollList(@RequestParam("last_bno")String last_bno){
 		List<Map<String, String>> dataList = new ArrayList<Map<String,String>>();
 		Map<String, String> data = null;
-		
+		System.out.println("last_bno : "+last_bno);
 		List<BoardDto> boardList = inter.selectScrollList();
 		for(BoardDto s : boardList){
 			data = new HashMap<String, String>();
