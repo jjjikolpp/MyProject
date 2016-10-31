@@ -58,6 +58,8 @@ function ss(){
 			type:"get",
 			url:"scroll",
 			dataType:"json",
+			
+			
 			success:function(scrollData){
 				var str = "<table border='1'>";
 				str +="<tr><th>번호</th></tr>"
@@ -70,8 +72,6 @@ function ss(){
 				
 				str += "</table>";
 				$("#showData").append(str);
-				
-				$(window).bind("scroll",ss);
 			},
 			error:function(){
 				console.log("scroll 이벤트 실패")
