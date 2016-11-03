@@ -7494,3 +7494,9 @@ java.lang.IllegalArgumentException: Module cannot be null
 
 !ENTRY org.eclipse.core.resources 2 10035 2016-11-03 14:58:33.427
 !MESSAGE The workspace will exit with unsaved changes in this session.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-11-03 15:12:57.222
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-11-03 15:12:57.223
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
